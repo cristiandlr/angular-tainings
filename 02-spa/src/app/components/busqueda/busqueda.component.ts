@@ -9,15 +9,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BusquedaComponent implements OnInit {
 
-	public heroes: Heroe[] = [];
+	heroes: Heroe[] = [];
+	termino: string;
 
 	constructor(private heroesService: HeroesService, private router: Router, private route: ActivatedRoute) {
 	}
 
 	ngOnInit() {
 		this.route.params.subscribe( params => {
-			this.heroes = this.heroesService.buscarHeroes(params.termino);
-			console.log(this.heroes);
+			this.termino = params['termino'];
+			this.heroes = this.heroesService.buscarHeroes(this.termino);
 		} );
 	}
 
