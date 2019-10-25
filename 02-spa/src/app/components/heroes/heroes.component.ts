@@ -11,8 +11,7 @@ export class HeroesComponent implements OnInit {
 
 	heroes: Heroe[] = [];
 
-	constructor(private heroesService: HeroesService,
-				private router: Router) {
+	constructor(private heroesService: HeroesService, private router: Router) {
 	}
 
 	ngOnInit() {
@@ -22,5 +21,4 @@ export class HeroesComponent implements OnInit {
 	verHeroe(idx: number) {
 		this.router.navigate( ['heroe', idx] );
 	}
-
 }

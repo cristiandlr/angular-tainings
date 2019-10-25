@@ -3,20 +3,8 @@
 
 <div class="card-columns animated fadeIn fast">
 
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-        <div class="card-body">
-            <h5 class="card-title">{{ heroe.nombre }}</h5>
-            <p class="card-text">{{ heroe.bio }}</p>
-            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+    <app-heroe-tarjeta *ngFor="let heroe of heroes" [heroe]="heroe" [index]="heroe.idx" (heroeSeleccionado)="verHeroe($event)"></app-heroe-tarjeta>
 
-            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
-				Ver mas...
-			</button>
-
-            <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block">Ver más link...</a> -->
-        </div>
-    </div>
 </div>
 
 <div *ngIf="heroes.length < 1">
