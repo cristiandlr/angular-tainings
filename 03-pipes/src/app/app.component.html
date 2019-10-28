@@ -68,13 +68,13 @@
             </tr>
             <tr>
                 <td>{{ salario }}</td>
-                <td>currency:'EUR':false</td>
-                <td>{{ salario | currency:'EUR':false }}</td>
+                <td>currency:'EUR':'code'</td>
+                <td>{{ salario | currency:'EUR':'code' }}</td>
             </tr>
             <tr>
                 <td>{{ salario }}</td>
-                <td>currency:'EUR':true:'4.0-0'</td>
-                <td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
+                <td>currency:'EUR':'symbol':'4.0-0'</td>
+                <td>{{ salario | currency:'EUR':'symbol':'4.0-0' }}</td>
             </tr>
             <tr>
                 <td>{{ salario }}</td>
@@ -121,6 +121,14 @@
                 <td>capitalizado:false</td>
                 <td><pre>{{ nombre2 | capitalizado:false }}</pre></td>
             </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>contrasena:{{ activar }}
+                    <br/>
+                    <button type="button" class="btn btn-outline-primary" (click)="activar = !activar">Activar/Desactivar</button>
+                </td>
+                <td>{{ nombre | contrasena:activar }}</td>
+            </tr>
         </tbody>
     </table>
 
@@ -128,5 +136,8 @@
     <ul>
         <li *ngFor="let item of arreglo | slice:5:20">{{ item }}</li>
     </ul>
+
+    <h4>Video</h4>
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>

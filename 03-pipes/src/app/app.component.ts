@@ -33,4 +33,8 @@ export class AppComponent {
 	});
 
 	fecha = new Date();
+
+	video = 'PXKYA-zmzTY';
+
+	activar = false;
 }
