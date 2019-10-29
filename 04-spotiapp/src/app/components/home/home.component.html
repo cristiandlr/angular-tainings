@@ -1,3 +1,10 @@
-<ul>
-    <li *ngFor="let pais of paises">{{ pais.name }} - {{ pais.population | number }}</li>
-</ul>
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="hayError" class="alert alert-danger m-5 animated fadeIn">
+    <h3>Error</h3>
+    <p>
+        {{ mensajeError }}
+    </p>
+</div>
+
+<app-tarjetas *ngIf="!loading" [items]="nuevasCanciones"></app-tarjetas>

@@ -13,6 +13,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { ROUTES } from './app.routes';
 import { RestcountriesComponent } from './components/restcountries/restcountries.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
 	declarations: [
@@ -21,7 +25,11 @@ import { RestcountriesComponent } from './components/restcountries/restcountries
 		SearchComponent,
 		ArtistaComponent,
 		NavbarComponent,
-		RestcountriesComponent
+		RestcountriesComponent,
+		NoimagePipe,
+		TarjetasComponent,
+		LoadingComponent,
+		DomseguroPipe
 	],
 	imports: [
 		BrowserModule,
