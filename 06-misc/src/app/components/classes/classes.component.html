@@ -1,0 +1,22 @@
+<div [ngClass]="alerta" class="alert" role="alert">
+    <strong>Well done!</strong> Successfully
+</div>
+
+<button type="button" class="btn btn-info" (click)="alerta = 'alert-info'">A info</button> &nbsp;
+<button type="button" class="btn btn-success" (click)="alerta = 'alert-success'">A success</button>
+
+<br /><br />
+
+<h3>
+    Proceso asíncrono
+</h3>
+
+<button class="btn btn-primary" 
+		type="button" 
+		name="button" 
+		[disabled]="loading"
+		(click)="ejecutar()" >
+	<i class="fa" [ngClass]="{'fa-save':!loading, 'fa-refresh fa-spin':loading }"></i>
+	<span *ngIf="!loading"> Guardar cambios</span>
+	<span *ngIf="loading"> Espere...</span>
+</button>
